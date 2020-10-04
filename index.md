@@ -22,7 +22,7 @@ The system uses the approaches of image processing performed using Python, and I
 ![3](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/3.jpg)
 
 ### Number Plate Characters Detected
-![4](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/4.jpg)
+![4](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/4.png)
 
 ### Raspberry Pi Output
 ![5](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/5.PNG)
