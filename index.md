@@ -11,3 +11,21 @@ The Raspberry Pi camera is mounted on a Raspberry Pi3 board. Additionally, an ul
 
 ## Application
 The system uses the approaches of image processing performed using Python, and Internet of Things implemented using a Raspberry Pi unit, to provide a practical approach for automated access control at security points in personal dwellings and apartments. 
+
+### Test Image
+![1](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/1.jpg)
+
+### Number Plate Recognized 
+![2](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/2.jpg)
+
+### Number Plate Cropped to Perform OCR
+![3](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/3.jpg)
+
+### Number Plate Characters Detected
+![4](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/4.jpg)
+
+### Raspberry Pi Output
+![5](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/5.PNG)
+
+### Raspberry Pi Setup with Camera, Ultrasonic Sensor and LED
+![6](https://raw.githubusercontent.com/yashprash/Automated-Vehicle-Entry-System/gh-pages/6.JPG)
