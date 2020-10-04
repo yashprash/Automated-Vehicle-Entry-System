@@ -1,37 +1,13 @@
-## Welcome to GitHub Pages
+# Automated Vehicle Entry System
 
-You can use the [editor on GitHub](https://github.com/yashprash/Automated-Vehicle-Entry-System/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Technology Stack
+Internet of Things (Raspberry Pi module, camera, ultrasonic sensor, Firebase, ThingSpeak), Image Processing (Python OpenCV, PyTesseract OCR)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Introduction
+This system is designed to provide automated access control to vehicles using a vehicle number plate character recognition process. First, the picture of the vehicle along with its number plate is captured using a camera connected to a Raspberry Pi module. The number plate is then identified from the rest of the picture using OpenCV. The text is then extracted and compared with the number plates of authorized vehicles. If the registration number matches, the vehicle is granted access to the authorized space (garage/ apartment/ toll). 
 
-### Markdown
+## Description
+The Raspberry Pi camera is mounted on a Raspberry Pi3 board. Additionally, an ultrasonic sensor is connected to the Raspberry Pi. When the ultrasonic sensor (HC-SR04) detects an object in its proximity, an image is captured by the Raspberry Pi camera. The image captured will consist of a single frame large enough to accommodate the image of a portion of the car with the standard sized number plate. The image is then transferred to Google’s cloud-based platform Firebase using the Python library Pyrebase. Next, the image is retrieved from the Firebase storage by code running in a Google Colab notebook, in order to perform image processing using the number plate detection algorithm, implemented using OpenCV methods. First, gaussian blur is applied to reduce image noise and image detail, following which CVTColor is used to convert the image to grayscale. Sobel is then used to further smoothen the image. Furthermore, threshold is applied to change the colour of every pixel to either black or white. Rectangles are detected in the image, and the ratio of the rectangles sides’ and their area are checked to see if they are in a certain range, corresponding to that of standard number plate sizes. Then the ideal number-plate sized rectangle is obtained from the picture, in the form of a bounding box. Once the coordinates of the number plate are extracted, it is cropped and is passed through certain OpenCV methods proved to increase OCR accuracy. Lastly, PyTesseract is used to recognize the text in the cropped number plate image. Once the text is extracted, it is uploaded to ThingSpeak cloud, which is retrieved by the code running in the Raspberry Pi, and is then matched to the set of authorized number plates available. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yashprash/Automated-Vehicle-Entry-System/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Application
+The system uses the approaches of image processing performed using Python, and Internet of Things implemented using a Raspberry Pi unit, to provide a practical approach for automated access control at security points in personal dwellings and apartments. 
